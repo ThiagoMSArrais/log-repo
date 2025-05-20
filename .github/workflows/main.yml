@@ -1,0 +1,21 @@
+name: CI
+on:
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Adicionando mensagens de logs
+        run: |
+         echo "::debug:: Mensagem de debug"
+         echo "::warning:: Mensagem de warning"
+         echo "::notice:: Mensagem de notice"
+         echo "::error:: Mensagem de error"
+      - name: Adicionando mensagens de logs em grupo
+        run: |
+          echo "::group:: Logs em grupo"
+          echo "Mensagem de log XPTO 01"
+          echo "Mensagem de log XPTO 02"
+          echo "Mensagem de log XPTO 03"
+          echo "Mensagem de log XPTO 04"
+          echo "::endgroup::"
